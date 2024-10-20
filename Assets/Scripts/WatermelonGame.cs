@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Linq;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -123,7 +122,7 @@ public sealed class WatermelonGame : MonoBehaviour
 
             currentFruits = pool.GetFruits(nextFruitType);
             currentFruits.transform.localPosition = spawnedFruitsParent.localPosition;
-            currentFruits.transform.localRotation = quaternion.Euler(0.0f, 0.0f, Random.Range(-60.0f, 60.0f));
+            currentFruits.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, Random.Range(-60.0f, 60.0f));
             currentFruits.OnSpawnNextFruits += userScore.OnAddScore;
             
             currentFruits.Rigidbody.simulated = false;
